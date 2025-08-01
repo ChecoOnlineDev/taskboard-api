@@ -16,20 +16,18 @@ model User {
   username String @unique
   password String
   email String @unique
-  task_relation Task[] //un usuario puede tener muchas tareas
 }
 
 model Task {
-  task_id Int @id @default(autoincrement())
-  user_id Int  
-  task_title String 
-  task_description String?
-  task_status TaskStatus @default(PENDING) //status de la tarea 
-  due_date DateTime? //fecha limite
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-  deleted_at DateTime? 
-  user_relation User @relation(fields: [user_id], references: [user_id]) //una tarea solo puede tener un usuario
+  task_id   Int @id @default(autoincrement())
+  task_title  String 
+  task_description  String?
+  task_status TaskStatus  @default(PENDING) //status de la tarea 
+  due_date  DateTime? //fecha limite
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+  deleted_at  DateTime? 
+ //una tarea solo puede tener un usuario
 }
 
 enum TaskStatus {
