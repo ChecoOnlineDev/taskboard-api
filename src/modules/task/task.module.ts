@@ -7,6 +7,6 @@ import { PrismaModule } from 'src/common/prisma/prisma.module';
     providers: [TaskService],
     controllers: [TaskController],
     imports: [PrismaModule],
-    exports: [TaskService, TaskController],
+    exports: [TaskService],
 })
 export class TaskModule {}
